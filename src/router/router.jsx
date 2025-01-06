@@ -8,7 +8,7 @@ import MyQueries from "../pages/MyQueries";
 import MyRecommendations from "../pages/MyRecommendations";
 import Registration from "../pages/Registration";
 import LogIn from "../pages/LogIn";
-import LogOut from "../pages/LogOut";
+
 
 
 
@@ -39,10 +39,7 @@ const router = createBrowserRouter([
               path: "/myRecommendations",
               element: <MyRecommendations />,
             },
-            {
-              path: "/logout",
-              element: <LogOut/>,
-            },
+           
             {
               path: "/login",
               element: <LogIn></LogIn>,

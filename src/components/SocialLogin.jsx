@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import { FaGoogle } from "react-icons/fa";
-import Swal7 from "sweetalert2";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ const SocialLogin = () => {
                     text: "Your google account is signed in successfully!",
                     icon: "success"
                 });
-                    //    navigate('/');
+                       navigate('/');
 
             }).catch((error) => {
                 // Handle Errors here.

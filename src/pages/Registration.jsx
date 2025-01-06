@@ -6,7 +6,8 @@ import Lottie from "lottie-react";
 import Swal from "sweetalert2";
 
 const Registration = () => {
-    const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, setUser, updateUserProfile, user } = useContext(AuthContext);
+    console.log(`user:${user}`)
      const navigate = useNavigate();
     const handleRegister = e => {
         e.preventDefault();
@@ -15,7 +16,9 @@ const Registration = () => {
         const email = form.email.value;
         const photoURL = form.photoURL.value;
         const password = form.password.value;
-        console.log("signup info:", email, password, name, photoURL)
+
+        console.log("signup info:", email, password, name, photoURL);
+
         createUser(email, password)
             .then((userCredential) => {
                 // Signed up 
@@ -26,7 +29,7 @@ const Registration = () => {
                     photoURL: photoURL
                 }).then(() => {
                     // Profile updated!
-                //    navigate('/');
+                   navigate('/');
                  Swal.fire({
                                     title: "Wow!",
                                     text: "You are signed-up successfully!",

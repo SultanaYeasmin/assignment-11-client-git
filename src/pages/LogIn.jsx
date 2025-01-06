@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import loginLottieData from "../assets/lottie/login.json"
 import Lottie from "lottie-react";
@@ -6,18 +6,22 @@ import SocialLogin from "../components/SocialLogin";
 import AuthContext from "../AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { IoMdEye } from "react-icons/io";
+import { RiEyeCloseLine } from "react-icons/ri";
 
 const LogIn = () => {
     const { signInUser,
-        setUser, } = useContext(AuthContext);
+        setUser, user } = useContext(AuthContext);
         const navigate = useNavigate();
+        const [showPass, setShowPass] = useState(false);
 
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log("login info:", email, password)
+        console.log("login info:", user);
+
         signInUser(email, password)
             .then((userCredential) => {
 
@@ -30,7 +34,7 @@ const LogIn = () => {
                     text: "You are signed in successfully!",
                     icon: "success"
                 });
-                    //    navigate('/');
+                       navigate('/');
 
             })
             .catch((error) => {
@@ -52,7 +56,7 @@ const LogIn = () => {
 
     return (
         <div>
-            <div className="hero my-20 bg-blue-200">
+            <div className="hero mt-10 bg-blue-200">
 
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left py-6">
@@ -73,16 +77,20 @@ const LogIn = () => {
                                 <input
                                     name="email" type="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input
-                                    name="password" type="password"
-                                    placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                <input type={showPass ? "text" : "password"}
+
+                                    name="password" placeholder="password" className="input input-bordered" required />
+                                <button onClick={() => setShowPass(!showPass)}
+                                    className='absolute right-3 top-[60%]'
+                                    type="button" >
+                                    {
+                                        showPass ? <IoMdEye /> : <RiEyeCloseLine />
+                                    }
+                                </button>
                             </div>
                             <div className="form-control">
                                 <button className="btn btn-primary">Login</button>

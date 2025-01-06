@@ -1,19 +1,29 @@
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Tooltip } from "react-tooltip";
+import { FaQuestionCircle } from "react-icons/fa";
 const Navbar = () => {
- 
-  const {user, logOut} = useContext(AuthContext)
-  const handleSignOut = ()=>{
+  const navigate = useNavigate();
+  const { user, logOut } = useContext(AuthContext);
+
+  // console.log(user)
+  const { photoURL, displayName } = user || {};
+  const handleSignOut = () => {
     logOut()
-    .then(() => {
-      // Sign-out successful.
-      alert("Sign-out successful.")
-    }).catch((error) => {
-      // An error happened.
-      alert("Sign-out not successful.", error)
-    });
+      .then(() => {
+        // Sign-out successful.
+        navigate("/login")
+        Swal.fire({
+          title: "Wow!",
+          text: "Sign-out successful!",
+          icon: "success"
+        });
+      }).catch((error) => {
+        // An error happened.
+        alert("Sign-out not successful.", error)
+      });
   }
   return (
     <div>
@@ -38,44 +48,64 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><a>Home</a></li>
+              <li><Link to="/">Home</Link></li>
               <li>
-                <a>Queries</a>
+                <Link to="/queries">Queries</Link>
 
               </li>
               {user &&
                 <>
-                  <li><a>Recommendations For Me</a></li>
-                  <li><a>My Queries</a></li>
-                  <li><a>My recommendations</a></li>
+                  <li><Link to="/recommendationsForMe">Recommendations For Me</Link></li>
+                  <li><Link to="/myQueries">My Queries</Link></li>
+                  <li><Link to="/myRecommendations">My recommendations</Link></li>
                 </>
               }
 
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl text-blue-500">daisyUI</a>
+          
+          <a className='btn btn-ghost text-2xl text-blue-400
+                            flex items-center gap-1'>
+                                <FaQuestionCircle/> QueryNest </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
+            <li><Link to="/">Home</Link></li>
             <li>
-              <a>Queries</a></li>
+                <Link to="/queries">Queries</Link>
+
+              </li>
 
             {
-            user &&
+              user &&
               <>
-                <li><a>Recommendations For Me</a></li>
-                <li><a>My Queries</a></li>
-                <li><a>My recommendations</a></li>
+               <li><Link to="/recommendationsForMe">Recommendations For Me</Link></li>
+                  <li><Link to="/myQueries">My Queries</Link></li>
+                  <li><Link to="/myRecommendations">My recommendations</Link></li>
               </>
-            } 
-             </ul>
+            }
+          </ul>
         </div>
         <div className="navbar-end">
           {
-            user ?  <button className="btn btn-primary" onClick={handleSignOut}>log out</button> : <Link to="/login" className="btn">Login</Link>
+            user ?
+              <div data-tooltip-id="my-tooltip-1" className="flex items-center gap-1 ">
+                <div className="">
+                  <img className="rounded-full w-12 h-12 mr-3" src={photoURL} />
+                  
+                </div>
+                <Tooltip
+                    id="my-tooltip-1"
+                    place="bottom"
+                    content={displayName}
+                  />
+                <button className="btn btn-primary" onClick={handleSignOut}>log out</button>
+              </div>
+
+              :
+              <Link to="/login" className="btn">Login</Link>
           }
-          
+
           {/* <Link to="registration" className="btn">Signup</Link> */}
         </div>
       </div>
