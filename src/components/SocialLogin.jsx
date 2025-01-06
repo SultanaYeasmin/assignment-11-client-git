@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import { FaGoogle } from "react-icons/fa";
-import Swal from "sweetalert2";
+import Swal7 from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 
