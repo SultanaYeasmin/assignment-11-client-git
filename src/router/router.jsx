@@ -4,10 +4,14 @@ import ErrorPage from "../pages/ErrorPage";
 import Home from "../pages/Home";
 import Queries from "../pages/Queries";
 import RecommendationsForMe from "../pages/RecommendationsForMe";
-import MyQueries from "../pages/MyQueries";
+
 import MyRecommendations from "../pages/MyRecommendations";
 import Registration from "../pages/Registration";
 import LogIn from "../pages/LogIn";
+import AddQueries from "../pages/AddQueries";
+import MyQueries from "../pages/MyQueries";
+
+
 
 
 
@@ -28,12 +32,16 @@ const router = createBrowserRouter([
               element: <Queries />,
             },
             {
+              path: "/addQueries",
+              element: <AddQueries/>,
+            },
+            {
               path: "/recommendationsForMe",
               element: <RecommendationsForMe />,
             },
             {
               path: "/myQueries",
-              element: <MyQueries />,
+              element: <MyQueries/>,
             },
             {
               path: "/myRecommendations",
