@@ -10,6 +10,7 @@ import Registration from "../pages/Registration";
 import LogIn from "../pages/LogIn";
 import AddQueries from "../pages/AddQueries";
 import MyQueries from "../pages/MyQueries";
+import QueryDetailsCard from "../pages/QueryDetailsCard";
 
 
 
@@ -43,6 +44,16 @@ const router = createBrowserRouter([
               path: "/myQueries",
               element: <MyQueries/>,
             },
+            {
+              path: "/query/:id",
+              element: <QueryDetailsCard/>,
+              loader: ({params}) => fetch(`http://localhost:5000/query/${params.id}`)
+            },
+
+            // {
+            //   path: "/queryDetails",
+            //   element: <QueryDetailsCard/>,
+            // },
             {
               path: "/myRecommendations",
               element: <MyRecommendations />,
