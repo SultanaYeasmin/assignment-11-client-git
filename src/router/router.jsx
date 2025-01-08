@@ -11,6 +11,7 @@ import LogIn from "../pages/LogIn";
 import AddQueries from "../pages/AddQueries";
 import MyQueries from "../pages/MyQueries";
 import QueryDetailsCard from "../pages/QueryDetailsCard";
+import QueryUpdate from "../pages/QueryUpdate";
 
 
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
             {
               path: "/query/:id",
               element: <QueryDetailsCard/>,
+              loader: ({params}) => fetch(`http://localhost:5000/query/${params.id}`)
+            },
+            {
+              path: "/query/update/:id",
+              element: <QueryUpdate/>,
               loader: ({params}) => fetch(`http://localhost:5000/query/${params.id}`)
             },
 

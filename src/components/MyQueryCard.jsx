@@ -22,7 +22,7 @@ const MyQueryCard = ({ query }) => {
                         <Link to={`/query/${_id}`}> 
                         <button className="btn btn-primary">View Details</button>
                         </Link>
-                        <Link>  
+                        <Link to={`/query/update/${_id}`}>  
                          <button className="btn btn-primary">Update</button>
                          </Link>
                         <Link> 
