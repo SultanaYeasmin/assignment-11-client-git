@@ -20,12 +20,24 @@ const MyQueries = () => {
     
     return (
         <div>
-             {queries?.length}
+             {queries.length}
               <br />
              <Link to="/addQueries" className='btn btn-outline'>add queries</Link>
+             {
+                (queries.length==0)  && <>
+                
+                <h1>No Queries found!</h1>
+                <Link to="/addQueries" className='btn btn-outline'>add queries</Link>
+                
+                </>
+            }
         <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10'>
         {
-            queries?.map((query, index)=><MyQueryCard query={query} key={index}/>)
+            queries?.map((query, index)=><MyQueryCard 
+            query={query} 
+            queries={queries}
+            setQueries={setQueries}
+            key={index}/>)
         }
         </div>
         

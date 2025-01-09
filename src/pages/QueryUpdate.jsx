@@ -49,9 +49,9 @@ const  QueryUpdate = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
-                    //  navigate('/myQueries');
+                    
                 }
-               
+               //  navigate('/myQueries');
             })
     }
 
