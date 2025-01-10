@@ -143,5 +143,4 @@ const AddQueries = () => {
     );
 };
 
-
 export default AddQueries;

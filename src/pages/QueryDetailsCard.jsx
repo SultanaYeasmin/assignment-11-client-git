@@ -45,6 +45,55 @@ const QueryDetailsCard = () => {
                     </div>
                 </div>
             </div>
+            <form className="card-body">
+
+                 {/* Recommendation TItle */}
+                 <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Recommendation TItle</span>
+                    </label>
+                    <textarea
+                        name="recommendation_title"
+                        className="textarea textarea-bordered" 
+                        placeholder="Recommendation Title"></textarea>
+                </div>
+                
+                {/* Recommendation Name */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Recommended product Name</span>
+                    </label>
+                    <input 
+                    type="text" name="recommendationName"
+                     placeholder="Recommended Product Name"
+                     className="input input-bordered" required />
+                </div>
+                
+                {/* Recommendation Image-URL*/}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Recommendation Product Image</span>
+                    </label>
+                    <input type="text"
+                        name="recommendation_Image_URL" placeholder="Recommendation Product Image" className="input input-bordered" required />
+                </div>
+
+               
+                {/* Recommendation reason Details */}
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Recommendation reason</span>
+                    </label>
+                    <textarea
+                        name="recommendation_reason"
+                        className="textarea textarea-bordered" 
+                        placeholder="Recommendation reason"></textarea>
+                </div>
+              
+                <div className="form-control mt-6">
+                    <button className="btn btn-primary">Add Recommendation</button>
+                </div>
+            </form>
         </div>
     );
 };
