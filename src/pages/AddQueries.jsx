@@ -23,8 +23,11 @@ const AddQueries = () => {
 
         const newQuery = {
             product_name, product_brand,
-            product_image, query_title, boycotting_reason,
-            user_name, user_email, user_image, query_date, recommendationCount
+            product_image, query_title,
+             boycotting_reason,
+            user_name, user_email, 
+            user_image, query_date,
+             recommendationCount
         }
         console.log(newQuery);
         fetch('http://localhost:5000/add-query', {
