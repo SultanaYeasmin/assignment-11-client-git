@@ -33,7 +33,7 @@ const SocialLogin = () => {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: `Error: ${errorMessage}`,
+                    text: `${errorMessage}`,
 
                 });
                 // ...
@@ -42,7 +42,7 @@ const SocialLogin = () => {
 
     return (
         <div className="flex justify-center flex-col px-8 mb-5">
-            <div className="divider">Or</div>
+            <div className="divider mt-0">Or</div>
 
             <button onClick={handleGoogleSignIn}
                 className='btn btn-outline 

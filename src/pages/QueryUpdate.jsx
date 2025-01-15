@@ -23,13 +23,13 @@ const  QueryUpdate = () => {
         const user_name = user?.displayName;
         const user_email = user?.email;
         const user_image = user?.photoURL;
-        const query_date = new Date().toLocaleString()
+        // const query_date = new Date().toLocaleString()
         const recommendationCount = 0;
 
         const updatedQuery = {
             product_name, product_brand,
             product_image, query_title, boycotting_reason,
-            user_name, user_email, user_image, query_date, recommendationCount
+            user_name, user_email, user_image, recommendationCount
         }
         console.log(updatedQuery);
 

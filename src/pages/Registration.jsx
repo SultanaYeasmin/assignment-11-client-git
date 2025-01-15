@@ -50,8 +50,7 @@ const Registration = () => {
                 Swal.fire({
                                     icon: "error",
                                     title: "Oops...",
-                                    text: `Error: ${errorMessage}`,
-                
+                                    text: `${errorMessage}`,
                                 });
                 
             });
@@ -60,13 +59,13 @@ const Registration = () => {
     }
 
     return (
-        <div className="hero bg-blue-200 p-10">
+        <div className="hero bg-blue-100 p-10">
             <div className="hero-content flex-col lg:flex-row gap-4">
                 <div className="text-center lg:text-left">
                     <Lottie animationData={registerLottieData} loop={true} />
                 </div>
                 <div className="card w-full max-w-sm shrink-0">
-                    <h1 className="text-xl mt-4 text-center text-blue-700">Register Form</h1>
+                    <h1 className="text-3xl mt-4 text-center text-blue-700">Register Form</h1>
                     <form className="card-body" onSubmit={handleRegister}>
                         <div className="form-control">
                             <label className="label">
@@ -82,7 +81,7 @@ const Registration = () => {
                             <input
                                 name="email" type="email" placeholder="email" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control">  
                             <label className="label">
                                 <span className="label-text">PhotoURL</span>
                             </label>
@@ -95,17 +94,15 @@ const Registration = () => {
                             </label>
                             <input
                                 name="password" type="password" placeholder="password" className="input input-bordered" required />
-                            <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                            </label>
+                           
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
-                        <div className='flex mt-5'>
-                            <p className='text-base'>Already signed up?</p>
+                        <div className='flex mt-5 items-center justify-around px-2'>
+                            <p className='text-base'>Already Registered?</p>
                             <Link to="/login">
-                                <button className='btn btn-sm block btn-outline btn-info'>Login</button>
+                                <button className='btn btn-md btn-outline btn-primary'>Login</button>
                             </Link>
                         </div>
                     </form>

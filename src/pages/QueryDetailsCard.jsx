@@ -17,12 +17,12 @@ const QueryDetailsCard = () => {
         user_name, user_email, user_image, query_date, _id,recommendationCount } = query || {};
           
     return (
-        <div>
+        <div className="h-[500px]">
             <div>
-                <p>{_id}</p>
+               
                 <div className="card card-compact bg-base-100 w-96 shadow-xl">
-                    <figure>
-                        <img
+                    <figure className="h-[300px]">
+                        <img className="h-full"
                             src={product_image}
                             alt={product_name} />
                     </figure>

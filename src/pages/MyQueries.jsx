@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthContext/AuthContext';
 import MyQueryCard from '../components/MyQueryCard';
+import AddQueryBanner from '../components/addQueryBanner';
 
 const MyQueries = () => {
     const [queries, setQueries] = useState([]);
@@ -23,7 +24,8 @@ const MyQueries = () => {
         <div>
              {queries.length}
               <br />
-             <Link to="/addQueries" className='btn btn-outline'>add queries</Link>
+              <AddQueryBanner/>
+             {/* <Link to="/addQueries" className='btn btn-outline'>add queries</Link> */}
              {
                 (queries.length==0)  && <>
                 
@@ -32,7 +34,8 @@ const MyQueries = () => {
                 
                 </>
             }
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10'>
+        <div className='md:w-full 
+        grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10 place-items-center justify-between py-9'>
         {
             queries?.map((query, index)=><MyQueryCard 
             query={query} 

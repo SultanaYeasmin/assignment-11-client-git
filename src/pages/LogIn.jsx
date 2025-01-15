@@ -44,7 +44,7 @@ const LogIn = () => {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: `Error: ${errorMessage}`,
+                    text: `${errorMessage}`,
 
                 });
                 // ..
@@ -66,7 +66,7 @@ const LogIn = () => {
 
                     </div>
                     <div className="card w-full max-w-sm shrink-0">
-                        <h1 className="text-lg font-bold text-center text-blue-700">Login Form</h1>
+                        <h1 className="text-3xl font-bold text-center text-blue-700">Login Form</h1>
 
                         <form onSubmit={handleSignIn}
                          className="card-body">
@@ -93,12 +93,12 @@ const LogIn = () => {
                                 </button>
                             </div>
                             <div className="form-control">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary mt-3">Login</button>
                             </div>
                             <div className='flex mt-3'>
                                 <p className='text-gray-600'>Not yet signed up?</p>
                                 <Link to="/registration">
-                                    <button className='btn btn-sm block btn-info'>Register</button>
+                                    <button className='btn btn-sm block btn-primary'>Register</button>
                                 </Link>
                             </div>
                            
