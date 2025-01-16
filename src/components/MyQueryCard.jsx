@@ -1,8 +1,11 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyQueryCard = ({ query, queries, setQueries }) => {
+    let { pathname } = useLocation();
+    console.log(pathname)
+
     const { product_name, product_brand,
         product_image, query_title, boycotting_reason,
         user_name, user_email, user_image, _id,
@@ -43,34 +46,57 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
     }
     return (
         <div className='px-5'>
-                    {
-            queries && <> 
-            <div className="card w-80
+            {
+                queries && <>
+                    <div className="card w-80
             card-compact bg-base-100 shadow-xl h-[400px] justify-between">
-                <figure className='h-[380px]'>
-                    <img className='h-full w-full'
-                        src={product_image}
-                        alt={product_name} />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">{product_name}</h2>
-                    <p>{query_title}</p>
-                    <div className="card-actions justify-between">
-                        <Link to={`/query/${_id}`}>
-                            <button className="btn btn-primary">View Details</button>
-                        </Link>
-                        <Link to={`/query/update/${_id}`}>
-                            <button className="btn btn-primary">Update</button>
-                        </Link>
+                        <figure className='h-[380px]'>
+                            <img className='h-full w-full'
+                                src={product_image}
+                                alt={product_name} />
+                        </figure>
+                        <div className="card-body">
+                            
+                            <h2 className="card-title">{product_name}
+                            {
+                                pathname === "/queries" && <>
+                                 <div className="badge badge-info">{recommendationCount}</div>
+                                </>
+                            }
+                           </h2>
+                         
+                            
+                            <p>{query_title}</p>
+                           
+                            {
+                                pathname === "/myQueries" && <>
+                                    <div className="card-actions justify-between">
+                                        <Link to={`/query/${_id}`}>
+                                            <button className="btn btn-primary">View Details</button>
+                                        </Link>
+                                        <Link to={`/query/update/${_id}`}>
+                                            <button className="btn btn-primary">Update</button>
+                                        </Link>
 
-                        <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete</button>
+                                        <button onClick={() => handleDelete(_id)} className="btn btn-primary">Delete</button>
+                                    </div>
+                                </>
+                            }
+                            {
+                                pathname === "/queries" && <>
+                                    <div className="card-actions justify-between mx-auto mt-5">
+                                        <Link to={`/query/${_id}`}>
+                                            <button className="btn btn-wide block">Recommend</button>
+                                        </Link>
+                                        
+                                    </div>
+                                </>
+                            }
 
-
+                        </div>
                     </div>
-                </div>
-            </div>
-            </>
-           }
+                </>
+            }
         </div>
     );
 };
