@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../AuthContext/AuthContext";
-
+import MyRecommendationsTable from "../components/myRecommendationsTable";
 
 const MyRecommendations = () => {
     const [myRecommendations, setMyRecommendations] = useState([]);
@@ -16,19 +16,62 @@ const MyRecommendations = () => {
             )
     }, [user?.email])
 
-
-
     return (
         <div>
-            {myRecommendations.length}
-            <div className="grid grid-cols-3 gap-10 ">
+            {/* {myRecommendations.length} */}
+            <div className="">
+            <table className="table table-sm">
+    <thead>
+      <tr>
+        <th>Sl. No.</th>
+        <th>User</th>
+        <th>Query</th>
+        <th>Suggested product</th>
+        <th>Date</th>
+        <th>Remarks</th>
+       
+      </tr>
+    </thead>
+    
+    
+ 
                 {
-                    myRecommendations.map(x => <p className="border-4">{x.queryId}</p>)
-                    
+                    myRecommendations.map((myRecommendation, index) => <>
+                   
+                        <tbody>
+                        <tr>
+                          <th className="text-xs">{index + 1}</th>
+                          <td className="text-xs">{myRecommendation.userEmailQuery}</td>
+                          <td className="text-xs">{myRecommendation.queryTitle}</td>
+                          <td className="text-xs">{myRecommendation.recommendationName}</td>
+                          <td className="text-xs">{myRecommendation. recommendationDate}</td>
+                          <td className="text-xs">X</td>
+                          
+                        </tr>
+                        
+                      </tbody>
+                      </>
+                      
+                      )
                 }
+                 </table>
             </div>
         </div>
     );
 };
 
 export default MyRecommendations;
+
+// recommendationTitle,
+//         recommendationName,
+//         recommendationImageURL,
+//         recommendationReason,
+//         queryId,
+//         queryTitle,
+//         productName,
+//         userEmailQuery,
+//         userNameQuery,
+//         recommenderEmail,
+//         recommenderName,
+//         recommendationDate,
+//         recommenderPhoto

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AuthContext from "../AuthContext/AuthContext";
 import RecommendationsId from "./RecommendationsId";
+import Swal from "sweetalert2";
 
 const AddRecommendation = ({ query }) => {
     // const [queryForId, setQuery] = useState([])
@@ -33,20 +34,22 @@ const AddRecommendation = ({ query }) => {
         const recommendation_reason = form.recommendation_reason.value;
         const recommender_name = user?.displayName;
         const recommender_email = user?.email;
+        const recommender_photo = user?.photoURL;
         const current_date = new Date().toLocaleString()
 
         const newRecommendation = {
-            recommendationTitle:recommendation_title,
-            recommendationName:recommendation_name,
-            recommendationImageURL:recommendation_Image_URL,
-            recommendationReason:recommendation_reason,
-            queryId: id,
+            recommendationTitle: recommendation_title,
+            recommendationName: recommendation_name,
+            recommendationImageURL: recommendation_Image_URL,
+            recommendationReason: recommendation_reason,
+            queryId: _id,
             queryTitle: query_title,
             productName: product_name,
             userEmailQuery: user_email,
             userNameQuery: user_name,
-            recommenderEmail:recommender_email,
-            recommenderName:recommender_name,
+            recommenderEmail: recommender_email,
+            recommenderName: recommender_name,
+            recommenderPhoto: recommender_photo,
             recommendationDate: current_date,
         }
 
@@ -75,12 +78,12 @@ const AddRecommendation = ({ query }) => {
 
     return (
         <div>
-            <form onSubmit={handleAddRecommendation} className="card-body">
+            <form onSubmit={handleAddRecommendation} className="card-body w-2/3 mx-auto">
 
                 {/* Recommendation TItle */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Recommendation TItle</span>
+                        <span className="label-text">Recommendation Title</span>
                     </label>
                     <textarea
                         name="recommendation_title"
@@ -123,7 +126,7 @@ const AddRecommendation = ({ query }) => {
                     <button className="btn btn-primary">Add Recommendation</button>
                 </div>
             </form>
-            <RecommendationsId />
+            {/* <RecommendationsId /> */}
         </div>
     );
 

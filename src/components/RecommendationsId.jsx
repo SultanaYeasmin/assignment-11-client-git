@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Recommendation from "./Recommendation";
 
 const RecommendationsId = () => {
-   
+
     const [recommendations, setRecommendations] = useState([])
     const { id } = useParams();
 
@@ -19,8 +19,8 @@ const RecommendationsId = () => {
     console.log(recommendations);
 
     return (
-        <div className="border my-10">
-
+        <div className="border my-10 container mx-auto">
+            <p className="text-green-800 my-5 pl-5 bg-green-50">Available suggestions:{recommendations.length}</p>
             {
                 recommendations?.map((recommendation) => <Recommendation
                     key={recommendation._id}
