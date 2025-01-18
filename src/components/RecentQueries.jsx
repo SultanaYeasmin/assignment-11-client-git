@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 import MyQueryCard from '../components/MyQueryCard';
 
 
-const Queries = () => {
+const RecentQueries = () => {
     const [queries, setQueries] = useState([]);
     // const {user} = useContext(AuthContext);
   
 
     useEffect(()=>{
-      fetch("http://localhost:5000/queries")
+      fetch("http://localhost:5000/queries-six")
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -66,4 +66,4 @@ const Queries = () => {
     );
 };
 
-export default Queries;
+export default RecentQueries;

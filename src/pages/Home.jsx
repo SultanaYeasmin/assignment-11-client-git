@@ -1,3 +1,4 @@
+import RecentQueries from "../components/RecentQueries";
 
 
 
@@ -5,7 +6,7 @@ const Home = () => {
     return (
         <div>
           
-home
+         <RecentQueries/>
         </div>
     );
 };
