@@ -1,12 +1,13 @@
 import RecentQueries from "../components/RecentQueries";
+import Slider from "../components/Slider";
 
 
 
 const Home = () => {
     return (
         <div>
-          
-         <RecentQueries/>
+            <Slider />
+            <RecentQueries />
         </div>
     );
 };

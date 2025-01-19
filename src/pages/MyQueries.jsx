@@ -47,26 +47,6 @@ const MyQueries = () => {
                         key={index} />)
                 }
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
     );
 };

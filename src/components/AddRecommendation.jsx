@@ -10,7 +10,8 @@ const AddRecommendation = ({ query }) => {
     const { user } = useContext(AuthContext);
     const { product_name, product_brand,
         product_image, query_title, boycotting_reason,
-        user_name, user_email, user_image, query_date, _id, recommendationCount } = query || {};
+        user_name, user_email, user_image, query_date, _id,
+         recommendationCount } = query || {};
 
     // useEffect(() => {
     //     fetch(`http://localhost:5000/query/${id}`)

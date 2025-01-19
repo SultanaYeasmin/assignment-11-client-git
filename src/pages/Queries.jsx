@@ -7,7 +7,6 @@ import MyQueryCard from '../components/MyQueryCard';
 const Queries = () => {
     const [queries, setQueries] = useState([]);
     // const {user} = useContext(AuthContext);
-  
 
     useEffect(()=>{
       fetch("http://localhost:5000/queries")
