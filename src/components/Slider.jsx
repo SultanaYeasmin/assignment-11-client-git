@@ -1,6 +1,4 @@
 
-
-import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,7 +15,7 @@ import Slide from './Slide';
 
 const Slider = () => {
     return (
-        <div>
+        <div className="px-5 py-10">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -30,6 +28,7 @@ const Slider = () => {
                     clickable: true,
                 }}
                 navigation={true}
+               
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
@@ -52,14 +51,14 @@ const Slider = () => {
         <SwiperSlide>
           <Slide
          image="https://i.ibb.co.com/mbj7TCX/pexels-leeloothefirst-5428835-1.jpg"
-            text='Discover Smarter Alternatives for Everyday Choices'
+            text='Discover Smarter Alternatives for Everyday Choices!'
             title="Browse personalized recommendations and find smarter, more affordable solutions."
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
          image="https://i.ibb.co.com/ftSLxjX/krakenimages-Y5bv-Rlc-Cx8k-unsplash.jpg"
-            text='Empowering Informed Consumer Decisions'
+            text='Empowering Informed Consumer Decisions!'
             title="Access a wide range of trusted insights to help you choose what’s right for you."
           />
         </SwiperSlide>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import AuthContext from '../AuthContext/AuthContext';
 import MyQueryCard from '../components/MyQueryCard';
+import Search from '../components/Search';
 
 
 const Queries = () => {
@@ -18,6 +19,7 @@ const Queries = () => {
     },[])
     return (
         <div className='my-10'>
+            <Search></Search>
               <div>
              {/* {queries.length} */}
              {/* <p>{user.displayName}</p> */}
