@@ -2,12 +2,13 @@ import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const SocialLogin = () => {
     const { googleSignIn, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
     const handleGoogleSignIn = () => {
         googleSignIn()
 
@@ -16,13 +17,13 @@ const SocialLogin = () => {
                 console.log(user);
 
                 setUser(user);
-
+                navigate(location?.state ? location.state : '/');
                 Swal.fire({
                     title: "Wow!",
                     text: "Your google account is signed in successfully!",
                     icon: "success"
                 });
-                       navigate('/');
+                       
 
             }).catch((error) => {
                 // Handle Errors here.

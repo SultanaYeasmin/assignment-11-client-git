@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import loginLottieData from "../assets/lottie/login.json"
 import Lottie from "lottie-react";
 import SocialLogin from "../components/SocialLogin";
@@ -12,8 +12,11 @@ import { RiEyeCloseLine } from "react-icons/ri";
 const LogIn = () => {
     const { signInUser,
         setUser, user } = useContext(AuthContext);
-        const navigate = useNavigate();
         const [showPass, setShowPass] = useState(false);
+        const navigate = useNavigate();
+        const location = useLocation();
+      
+       
 
     const handleSignIn = e => {
         e.preventDefault();
@@ -29,12 +32,13 @@ const LogIn = () => {
                 const user = userCredential.user;
                 console.log("sign-in:", user.email)
                 setUser(user);
+                navigate(location?.state ? location.state :'/');
                 Swal.fire({
                     title: "Wow!",
                     text: "You are signed in successfully!",
                     icon: "success"
                 });
-                       navigate('/');
+               
 
             })
             .catch((error) => {

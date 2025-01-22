@@ -12,7 +12,7 @@ const AddQueryBanner = () => {
                     <Lottie
                         animationData={askLottieData}
                         loop={true}
-                        style={{ width: "30vw", height: "20vw" }}
+                        style={{ width: "30vw", height: "12vw" }}
                         />
 
                 </div>
