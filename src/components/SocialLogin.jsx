@@ -16,7 +16,7 @@ const SocialLogin = () => {
                 const user = result.user;
                 console.log(user);
 
-                setUser(user);
+                // setUser(user);
                 navigate(location?.state ? location.state : '/');
                 Swal.fire({
                     title: "Wow!",

@@ -15,9 +15,7 @@ const LogIn = () => {
         const [showPass, setShowPass] = useState(false);
         const navigate = useNavigate();
         const location = useLocation();
-      
-       
-
+           
     const handleSignIn = e => {
         e.preventDefault();
         const form = e.target;
@@ -31,7 +29,7 @@ const LogIn = () => {
                 // Signed up 
                 const user = userCredential.user;
                 console.log("sign-in:", user.email)
-                setUser(user);
+                // setUser(user);
                 navigate(location?.state ? location.state :'/');
                 Swal.fire({
                     title: "Wow!",

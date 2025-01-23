@@ -23,7 +23,7 @@ const Registration = () => {
             .then((userCredential) => {
                 // Signed up 
                 const user = userCredential.user;
-                setUser(user);
+                // setUser(user);
                 updateUserProfile({
                     displayName: name,
                     photoURL: photoURL

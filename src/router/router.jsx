@@ -11,7 +11,8 @@ import AddQueries from "../pages/AddQueries";
 import MyQueries from "../pages/MyQueries";
 import QueryDetailsCard from "../pages/QueryDetailsCard";
 import QueryUpdate from "../pages/QueryUpdate";
-import PrivateRoute from "../components/PrivateRoute";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 const router = createBrowserRouter([

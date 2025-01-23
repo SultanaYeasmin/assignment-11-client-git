@@ -3,6 +3,7 @@ import auth from "../firebase/firebase.config";
 import AuthContext from "./AuthContext";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 const provider = new GoogleAuthProvider();
 
@@ -43,21 +44,21 @@ const logOut = () =>{
   
 }
 const updateUserProfile = (updatedData) =>{
-       
+      
   return updateProfile(auth.currentUser, updatedData);
 }
 useEffect(()=>{
   const unSubscribe =  onAuthStateChanged(auth, (currentUser) => {
     setLoading(false);
     setUser(currentUser)
-        if (currentUser) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/auth.user
-          const uid = currentUser.uid;
-          // ...
+        if (currentUser?.email) {
+        const user = {email: currentUser.email}
+           axios.post('http://localhost:5000/jwt', user, {withCredentials:true} )
+           .then(res =>  console.log('login token', res.data))
+
         } else {
-          // User is signed out
-          // ...
+          axios.post('http://localhost:5000/logout', {}, {withCredentials:true} )
+           .then(res =>  console.log('logout-jwt', res.data))
         }
       });
 
@@ -66,7 +67,7 @@ useEffect(()=>{
 
 const authInfo = { 
     createUser, signInUser, user, 
-    setLoading, setUser, loading, setLoading,
+    setLoading, setUser, loading,
      googleSignIn, logOut, updateUserProfile
 
 }
