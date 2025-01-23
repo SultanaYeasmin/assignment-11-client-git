@@ -3,15 +3,18 @@ import Swal from "sweetalert2";
 
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const  QueryUpdate = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const axiosSecure = useAxiosSecure();
     const query = useLoaderData()
     const { product_name, product_brand,
         product_image, query_title, boycotting_reason,
         user_name, user_email, user_image, query_date, recommendationCount, _id } = query || {}
    
-    const navigate = useNavigate();
+   
     const handleQueryUpdate = e => {
         e.preventDefault();
         const form = e.target
@@ -33,15 +36,10 @@ const  QueryUpdate = () => {
         }
         console.log(updatedQuery);
 
-        fetch(`http://localhost:5000/update-query/${_id}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(updatedQuery),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.modifiedCount) {
+        axiosSecure.put(`http://localhost:5000/update-query/${_id}`, updatedQuery)
+            .then(res =>  {
+                console.log(res.data)
+                if (res.data.modifiedCount) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",

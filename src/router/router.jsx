@@ -14,7 +14,6 @@ import QueryUpdate from "../pages/QueryUpdate";
 import PrivateRoute from "./PrivateRoute";
 
 
-
 const router = createBrowserRouter([
   {
     path: "/",

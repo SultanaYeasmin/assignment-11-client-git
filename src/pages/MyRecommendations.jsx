@@ -2,17 +2,28 @@ import { useContext, useEffect, useState } from "react";
 import AuthContext from "../AuthContext/AuthContext";
 import Swal from "sweetalert2";
 import { MdDeleteForever } from "react-icons/md";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyRecommendations = () => {
     const [myRecommendations, setMyRecommendations] = useState([]);
     const { user } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure();
 
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/recommendations?email=${user?.email}`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             setMyRecommendations(data)
+    //         }
+    //         )
+    // }, [user?.email])
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/recommendations?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setMyRecommendations(data)
+        axiosSecure.get(`/recommendations?email=${user?.email}`)
+            .then(res  => {
+                console.log(res.data)
+                setMyRecommendations(res.data)
             }
             )
     }, [user?.email])

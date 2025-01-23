@@ -3,10 +3,13 @@ import Swal from "sweetalert2";
 
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const AddQueries = () => {
     const { user } = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
+
     const handleAddQueries = e => {
         e.preventDefault();
         const form = e.target
@@ -30,15 +33,11 @@ const AddQueries = () => {
              recommendationCount
         }
         console.log(newQuery);
-        fetch('http://localhost:5000/add-query', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newQuery),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.insertedId) {
+        
+       axiosSecure.post('/add-query', newQuery)
+            .then(res =>  {
+                console.log(res.data)
+                if (res.data.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",

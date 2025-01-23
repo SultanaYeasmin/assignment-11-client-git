@@ -1,16 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../AuthContext/AuthContext";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const RecommendationsForMe = () => {
     const [recommendations, setRecommendations] = useState([]);
     const { user } = useContext(AuthContext);
-
+    const axiosSecure = useAxiosSecure()
     useEffect(() => {
-        fetch(`http://localhost:5000/recommendations-for-me/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                setRecommendations(data)
+        axiosSecure.get(`/recommendations-for-me/${user?.email}`)
+            .then(res =>  {
+                console.log(res.data)
+                setRecommendations(res.data)
             }
             )
     }, [user?.email])

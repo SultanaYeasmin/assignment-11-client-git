@@ -4,18 +4,29 @@ import AuthContext from '../AuthContext/AuthContext';
 import MyQueryCard from '../components/MyQueryCard';
 import AddQueryBanner from '../components/addQueryBanner';
 import NoQueryMsg from '../components/NoQueryMsg';
+import axios from 'axios';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const MyQueries = () => {
     const [queries, setQueries] = useState([]);
     const { user } = useContext(AuthContext);
+    
+    const axiosSecure = useAxiosSecure();
 
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/queries/${user?.email}`,
+    //      {withCredentials:true})
+    //         .then(res =>  {
+    //             console.log(res.data);
+    //             setQueries(res.data)
+    //         })
+    // }, [user?.email])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/queries/${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setQueries(data)
+        axiosSecure.get(`/queries/${user?.email}`)
+            .then(res =>  {
+                console.log(res.data);
+                setQueries(res.data)
             })
     }, [user?.email])
 
@@ -25,16 +36,16 @@ const MyQueries = () => {
         <div>
             {/* {queries.length}
             <br /> */}
-           {
-             (queries.length > 0) && <>
-             <AddQueryBanner />
-            </>
-           }
+            {
+                (queries.length > 0) && <>
+                    <AddQueryBanner />
+                </>
+            }
             {/* <Link to="/addQueries" className='btn btn-outline'>add queries</Link> */}
             {
                 (queries.length == 0) && <>
-                   
-            <NoQueryMsg/>
+
+                    <NoQueryMsg />
                 </>
             }
             <div className='md:w-full 
