@@ -54,88 +54,89 @@ const  QueryUpdate = () => {
     }
 
     return (
-        <div>
-            <h2 className="text-3xl">Update</h2>
+        <div className="card w-11/12 md:w-full max-w-xl shrink-0 bg-blue-100 mx-auto my-10 border border-blue-500">
+            <h1 className="text-3xl pt-10 font-bold text-center text-blue-500">Update Query!</h1>
+            {/* <h2 className="text-3xl">Update</h2> */}
             <form onSubmit={handleQueryUpdate} className="card-body">
                 {/* Product Name */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Product Name</span>
+                        <span className="label-text text-blue-500 font-bold">Product Name</span>
                     </label>
                     <input defaultValue={product_name} type="text"
-                     name="productName" placeholder="Product Name" className="input input-bordered" required />
+                     name="productName" placeholder="Product Name" className="input input-bordered text-gray-400 text-xs" required />
                 </div>
                 {/* Product Brand */}
                 <div className="form-control">
 
                     <label className="label">
-                        <span className="label-text">Product Brand</span>
+                        <span className="label-text text-blue-500 font-bold">Product Brand</span>
                     </label>
-                    <input defaultValue={product_brand} type="text" name="productBrand" placeholder="Product Brand" className="input input-bordered" required />
+                    <input defaultValue={product_brand} type="text" name="productBrand" placeholder="Product Brand" className="input input-bordered text-gray-400 text-xs" required />
 
                 </div>
                 {/* Product Image-URL*/}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Product Image-URL</span>
+                        <span className="label-text text-blue-500 font-bold">Product Image-URL</span>
                     </label>
                     <input defaultValue={product_image} type="text"
-                        name="product_Image_URL" placeholder="Product Image-URL" className="input input-bordered" required />
+                        name="product_Image_URL" placeholder="Product Image-URL" className="input input-bordered text-gray-400 text-xs" required />
                 </div>
 
                 {/* Query TItle */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Query TItle</span>
+                        <span className="label-text text-blue-500 font-bold ">Query TItle</span>
                     </label>
                     <textarea defaultValue={query_title}
                         name="query_title"
-                        className="textarea textarea-bordered" placeholder="Query Title"></textarea>
+                        className="textarea textarea-bordered text-gray-400 text-xs" placeholder="Query Title"></textarea>
                 </div>
                 {/* Boycotting Reason Details */}
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Boycotting Reason Details</span>
+                        <span className="label-text text-blue-500 font-bold">Boycotting Reason Details</span>
                     </label>
                     <textarea defaultValue={boycotting_reason}
                         name="boycotting_reason"
-                        className="textarea textarea-bordered" placeholder="Boycotting Reason Details"></textarea>
+                        className="textarea textarea-bordered text-gray-400 text-xs" placeholder="Boycotting Reason Details"></textarea>
                 </div>
 
                 {/* user name */}
                 {/* <div className="form-control">
                     <label className="label">
-                        <span className="label-text">user name</span>
+                        <span className="label-text text-blue-500 font-bold">user name</span>
                     </label>
                     <input type="text" defaultValue={user?.displayName}
-                        name="user_name" className="input input-bordered" required />
+                        name="user_name" className="input input-bordered text-gray-400 text-xs" required />
                 </div> */}
                 {/* user EMAIL */}
                 {/* <div className="form-control">
                     <label className="label">
-                        <span className="label-text">user email</span>
+                        <span className="label-text text-blue-500 font-bold">user email</span>
                     </label>
                     <input type="text" defaultValue={user?.email}
-                        name="user_email" className="input input-bordered" required />
+                        name="user_email" className="input input-bordered text-gray-400 text-xs" required />
                 </div> */}
                 {/* User’s profile image */}
                 {/* <div className="form-control">
                     <label className="label">
-                        <span className="label-text">User profile image</span>
+                        <span className="label-text text-blue-500 font-bold">User profile image</span>
                     </label>
                     <input type="text" defaultValue={user?.photoURL}
-                        name="user_image" placeholder="User profile image" className="input input-bordered" required />
+                        name="user_image" placeholder="User profile image" className="input input-bordered text-gray-400 text-xs" required />
                 </div> */}
                 {/* current Date and Time
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Current Date and Time</span>
+                        <span className="label-text text-blue-500 font-bold">Current Date and Time</span>
                     </label>
                     <input type="text"
                         name="current_date"
                         defaultValue={new Date().toLocaleString()}
                         placeholder="current Date and Time"
-                        className="input input-bordered" required />
+                        className="input input-bordered text-gray-400 text-xs" required />
                 </div> */}
 
 

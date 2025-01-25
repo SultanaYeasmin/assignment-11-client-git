@@ -20,8 +20,8 @@ const Queries = () => {
     }, [search])
     console.log(search, gridLayout)
     return (
-        <div className='my-10'>
-            <div style={{ backgroundImage: `url(${img123})` }} className="bg-cover bg-center h-[400px] md:h-[520px]">
+        <div className=''>
+            <div style={{ backgroundImage: `url(${img123})` }} className="bg-cover bg-center h-[60vh]">
                 <div className='flex items-center justify-center w-full h-full bg-gray-900/40'>
                     <div className='text-center'>
                         <h1 className="text-xl md:text-4xl font-bold mb-3  px-10  text-white">
@@ -63,24 +63,18 @@ const Queries = () => {
                     </div>
                 </div>
             </div>
-            {/* ● Change Layout: In All Queries Page, there will be 2-3 buttons for toggling the
-            grid layout.
-            ● Suppose , if you did a 3 column grid layout , then by toggling the Button it will
-            change the layout. */}
+           
             <div className='my-10 flex justify-end pr-10'>
-                <div className="join join-vertical lg:join-horizontal">
-                    <button onClick={() => setGridLayout(1)} className="btn join-item bg-green-200 hover:bg-green-100 transition-colors">Col-1</button>
-                    <button onClick={() => setGridLayout(2)} className="btn join-item bg-green-400 hover:bg-green-300 transition-colors">Col-2</button>
-                    <button onClick={() => setGridLayout(3)} className="btn join-item bg-green-600 hover:bg-green-500 transition-colors">Col-3</button>
+                <div className="join hidden lg:block lg:join-horizontal">
+                    <button onClick={() => setGridLayout(1)} className="btn duration-300 border-none join-item bg-blue-200 hover:bg-blue-100 transition-colors">Col-1</button>
+                    <button onClick={() => setGridLayout(2)} className="btn duration-300 border-none join-item bg-blue-400 hover:bg-blue-300 transition-colors">Col-2</button>
+                    <button onClick={() => setGridLayout(3)} className="btn duration-300 border-none join-item bg-blue-600 hover:bg-blue-500 transition-colors">Col-3</button>
                 </div>
 
 
             </div>
             <div>
-                {/* {queries.length} */}
-                {/* <p>{user.displayName}</p> */}
-                {/* <br /> */}
-                {/* <Link to="/addQueries" className='btn btn-outline'>add queries</Link> */}
+              
                 {
                     (queries.length == 0) && <>
 
@@ -93,7 +87,7 @@ const Queries = () => {
                 ${gridLayout === 1 ? 'lg:grid-cols-1' : ''}
                ${gridLayout === 2 ? 'lg:grid-cols-2' : ''}
                 ${gridLayout === 3 ? 'lg:grid-cols-3' : ''}
-              md:grid-cols-2 grid-cols-1 justify-between items-center gap-10`}>
+              md:grid-cols-2 grid-cols-1 justify-items-center items-center gap-10`}>
                     {
                         queries?.map((query, index) => <MyQueryCard
                             query={query}
@@ -102,27 +96,7 @@ const Queries = () => {
                             key={index} />)
                     }
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
+           </div>
         </div>
     );
 };

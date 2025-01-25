@@ -58,20 +58,19 @@ const LogIn = () => {
 
     return (
         <div>
-            <div className="hero mt-10 bg-blue-200">
-
-                <div className="hero-content flex-col lg:flex-row">
+            <div className="hero bg-blue-200">
+                <div className="hero-content flex-col md:flex-row">
                     <div className="text-center lg:text-left py-6">
-                       
-                            <Lottie animationData={loginLottieData} loop={true} />
-                       
+                     <Lottie animationData={loginLottieData}
+                      style={{ width: "30vw", height: "30vw" }}
+                     loop={true} />
 
                     </div>
                     <div className="card w-full max-w-sm shrink-0">
-                        <h1 className="text-3xl font-bold text-center text-blue-700">Login Form</h1>
-
+                    <h1 className="text-3xl pt-10 font-bold text-center text-blue-500">Login Form</h1>
                         <form onSubmit={handleSignIn}
                          className="card-body">
+                           
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -100,7 +99,7 @@ const LogIn = () => {
                             <div className='flex mt-3'>
                                 <p className='text-gray-600'>Not yet signed up?</p>
                                 <Link to="/registration">
-                                    <button className='btn btn-sm block btn-primary'>Register</button>
+                                    <button className='btn btn-sm block btn-outline text-blue-500'>Register</button>
                                 </Link>
                             </div>
                            

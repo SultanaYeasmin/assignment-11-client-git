@@ -7,7 +7,7 @@ import Stats from "../components/stats";
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
             <Slider />
             <RecentQueries />
             <Stats/>

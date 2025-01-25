@@ -23,8 +23,9 @@ import img6 from "../assets/images/health-tech.jpg"
 
 const News = () => {
     return (
-        <>
-        <h1 className='text-3xl text-center my-5 font-extrabold'>Latest News!</h1>
+      <div className='px-5 container mx-auto'>
+        
+        <h1 className='text-3xl text-center pb-10 font-extrabold text-blue-600'>Latest News!</h1>
           <div className='mb-20'>
           <Swiper
                 breakpoints={{
@@ -48,7 +49,7 @@ const News = () => {
                 <SwiperSlide>
                     <NewsSlide
                     imageURL={img1} time="1"
-                   topic="climate"
+                   topic="Climate"
                     title="Sustainable Living Trends" 
                     subTitle="Explore innovative solutions for a greener tomorrow."
                     url="https://explodingtopics.com/blog/sustainability-trends"
@@ -89,7 +90,57 @@ const News = () => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <NewsSlide
-                   imageURL={img6} topic="health" time="2 day"
+                   imageURL={img6} topic="Health" time="2 day"
+                    title="Healthcare Meets Technology"
+                    subTitle="Innovations redefining patient care and wellness."
+                      url="https://www.forbes.com/councils/forbestechcouncil/2023/05/16/where-healthcare-meets-tech-three-crucial-areas-of-discussion/"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                    imageURL={img1} time="1"
+                   topic="Climate"
+                    title="Sustainable Living Trends" 
+                    subTitle="Explore innovative solutions for a greener tomorrow."
+                    url="https://explodingtopics.com/blog/sustainability-trends"
+                    
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                   imageURL={img2} topic="Tech" time="1 hr"
+                    title="Breakthrough in AI Technology" 
+                    subTitle="Revolutionizing industries with cutting-edge advancements."
+                      url="https://www.forbes.com/sites/bernardmarr/2024/12/16/6-game-changing-ai-breakthroughs-that-defined-2024/"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                   imageURL={img3} topic="Market" time="2 hrs"
+                    title="Global Market Insights" 
+                    subTitle="Key updates shaping the future of business."
+                      url="https://www.gminsights.com/"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                   imageURL={img4} topic="Business" time="3 hrs"
+                    title="Startups on the Rise"
+                    subTitle="Inspiring stories of new ventures breaking boundaries."
+                      url=""
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                   imageURL={img5} topic="IT" time="1 day"
+                    title="Cybersecurity Alert"
+                    subTitle="Staying ahead in the fight against digital threats."
+                      url="https://explodingtopics.com/blog/fast-growing-companies"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <NewsSlide
+                   imageURL={img6} topic="Health" time="2 day"
                     title="Healthcare Meets Technology"
                     subTitle="Innovations redefining patient care and wellness."
                       url="https://www.forbes.com/councils/forbestechcouncil/2023/05/16/where-healthcare-meets-tech-three-crucial-areas-of-discussion/"
@@ -100,7 +151,8 @@ const News = () => {
 
             </Swiper>
           </div>
-        </>
+      
+      </div>
     );
 };
 

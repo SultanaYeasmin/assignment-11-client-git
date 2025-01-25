@@ -45,11 +45,11 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
         });
     }
     return (
-        <div className='px-5'>
+        <div className='px-5 '>
             {
                 queries && <>
                     <div className="card w-80
-            card-compact bg-base-100 shadow-xl h-[400px] justify-between">
+            card-compact bg-base-100 shadow-xl h-[400px] justify-between transition-transform duration-300 hover:scale-110">
                         <figure className='h-[380px]'>
                             <img className='h-full w-full'
                                 src={product_image}

@@ -15,19 +15,21 @@ const RecommendationsForMe = () => {
             )
     }, [user?.email])
     return (
-        <div>
-           
-                {/* {myRecommendations.length} */}
-                <div className="container mx-auto px-5 my-10">
+        <div className="container mx-auto">
+           {
+             recommendations && <>
+             
+              {/* {myRecommendations.length} */}
+              <div className="px-5 my-10">
                     <table className="table table-sm">
-                        <thead className="text-green-800 bg-purple-200">
+                        <thead className="text-gray-800 bg-blue-200">
                             <tr>
                                 <th>Sl. No.</th>
-                                <th>Recommender</th>
+                                <th className="hidden md:table-cell">Recommender</th>
                                 <th>My Query</th>
                                 <th>Suggested product</th>
-                                <th>Image</th>
-                                <th>Date</th>
+                                <th className="hidden md:table-cell">Image</th>
+                                <th className="hidden md:table-cell">Date</th>
                             </tr>
                         </thead>
                         {
@@ -36,11 +38,11 @@ const RecommendationsForMe = () => {
                                 <tbody>
                                     <tr>
                                         <th className="text-xs">{index + 1}</th>
-                                        <td className="text-xs">{recommendation.recommenderEmail}</td>
+                                        <td className="text-xs hidden md:table-cell">{recommendation.recommenderEmail}</td>
                                         <td className="text-xs">{recommendation.queryTitle}</td>
                                         <td className="text-xs">{recommendation.recommendationName}</td>
-                                        <td className="text-xs"><img className="w-20 h-14" src={recommendation.recommendationImageURL} /></td>
-                                        <td className="text-xs">{recommendation.recommendationDate}</td>
+                                        <td className="text-xs hidden md:table-cell"><img className="w-20 h-14" src={recommendation.recommendationImageURL} /></td>
+                                        <td className="text-xs hidden md:table-cell">{recommendation.recommendationDate}</td>
 
 
                                     </tr>
@@ -52,6 +54,10 @@ const RecommendationsForMe = () => {
                         }
                     </table>
                 </div>
+             </> 
+
+           }
+               
             </div>
 
       

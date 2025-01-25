@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import AuthContext from "../AuthContext/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Tooltip } from "react-tooltip";
 import { FaQuestionCircle } from "react-icons/fa";
+
+
+
 const Navbar = () => {
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
@@ -28,7 +31,7 @@ const Navbar = () => {
   return (
     <div>
 
-      <div className="navbar bg-base-100 container mx-auto">
+      <div className="navbar bg-[#1E90FF] px-10 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -48,41 +51,40 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content 
-              bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><Link to="/">Home</Link></li>
+             bg-[#1E90FF] text-white rounded-box z-30 mt-3 w-52 p-2 shadow">
+              <li className=""><NavLink to="/">Home</NavLink></li>
               <li>
-                <Link to="/queries">Queries</Link>
+                <NavLink  to="/queries">Queries</NavLink>
 
               </li>
               {user &&
                 <>
-                  <li><Link to="/recommendationsForMe">Recommendations For Me</Link></li>
-                  <li><Link to="/myQueries">My Queries</Link></li>
-                  <li><Link to="/myRecommendations">My recommendations</Link></li>
+                  <li><NavLink  to="/recommendationsForMe">Recommendations for me</NavLink></li>
+                  <li><NavLink  to="/myQueries">My Queries</NavLink></li>
+                  <li><NavLink  to="/myRecommendations">My Recommendations</NavLink></li>
                 </>
               }
 
             </ul>
           </div>
           
-          <a className='btn btn-ghost text-2xl text-blue-400
-                            flex items-center gap-1'>
+          <a className='btn btn-ghost text-sm md:text-base lg:text-xl text-white flex items-center gap-1  transition-colors hover:bg-[#87cefa86] duration-300'>
                                 <FaQuestionCircle/> QueryNest </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><Link to="/">Home</Link></li>
+            <li><NavLink  to="/">Home</NavLink></li>
             <li>
-                <Link to="/queries">Queries</Link>
+                <NavLink  to="/queries">Queries</NavLink>
 
               </li>
 
             {
               user &&
               <>
-               <li><Link to="/recommendationsForMe">Recommendations For Me</Link></li>
-                  <li><Link to="/myQueries">My Queries</Link></li>
-                  <li><Link to="/myRecommendations">My recommendations</Link></li>
+               <li><NavLink  to="/recommendationsForMe">Recommendations for me</NavLink></li>
+                  <li><NavLink  to="/myQueries">My Queries</NavLink></li>
+                  <li><NavLink  to="/myRecommendations">My Recommendations</NavLink></li>
               </>
             }
           </ul>
@@ -92,7 +94,8 @@ const Navbar = () => {
             user ?
               <div data-tooltip-id="my-tooltip-1" className="flex items-center gap-1 ">
                 <div className="">
-                  <img className="rounded-full w-12 h-12 mr-3" src={photoURL} />
+                  <img className="rounded-full w-12 h-12 mr-3" 
+                  src={photoURL} alt="" />
                   
                 </div>
                 <Tooltip
@@ -100,7 +103,8 @@ const Navbar = () => {
                     place="bottom"
                     content={displayName}
                   />
-                <button className="btn btn-primary" onClick={handleSignOut}>log out</button>
+                <button 
+                className="btn bg-[#1E90FF] hover:bg-[#87cefa86] transition-colors duration-300 text-white border-none" onClick={handleSignOut}>Log out</button>
               </div>
 
               :

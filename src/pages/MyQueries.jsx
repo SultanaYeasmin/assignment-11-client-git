@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthContext/AuthContext';
 import MyQueryCard from '../components/MyQueryCard';
-import AddQueryBanner from '../components/addQueryBanner';
+// import AddQueryBanner from '../components/addQueryBanner';
 import NoQueryMsg from '../components/NoQueryMsg';
 import axios from 'axios';
 import useAxiosSecure from '../hooks/useAxiosSecure';
+import AddQueryBanner from '../components/AddQueryBanner';
 
 const MyQueries = () => {
     const [queries, setQueries] = useState([]);
@@ -44,7 +45,6 @@ const MyQueries = () => {
             {/* <Link to="/addQueries" className='btn btn-outline'>add queries</Link> */}
             {
                 (queries.length == 0) && <>
-
                     <NoQueryMsg />
                 </>
             }

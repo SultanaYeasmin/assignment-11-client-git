@@ -18,16 +18,16 @@ const MyRecommendations = () => {
     //         }
     //         )
     // }, [user?.email])
-    
+
     useEffect(() => {
         axiosSecure.get(`/recommendations?email=${user?.email}`)
-            .then(res  => {
+            .then(res => {
                 console.log(res.data)
                 setMyRecommendations(res.data)
             }
             )
     }, [user?.email])
-     const handleDelete = (_id) => {
+    const handleDelete = (_id) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -49,7 +49,7 @@ const MyRecommendations = () => {
                         if (data.deletedCount) {
                             const restMyRecommendations = myRecommendations.filter(q => q._id !== _id)
                             setMyRecommendations(restMyRecommendations);
-                            
+
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your one Recommendation has been deleted.",
@@ -62,45 +62,47 @@ const MyRecommendations = () => {
     }
 
     return (
-        <div className="my-20">
+        <div className="my-10 container mx-auto px-5">
             {/* {myRecommendations.length} */}
             <div className="">
-            <table className="table table-sm">
-    <thead className="text-green-800 bg-purple-200">
-      <tr>
-        <th>Sl. No.</th>
-        <th>Asked by</th>
-        <th>Query</th>
-        <th>Suggested product</th>
-        {/* <th>Image</th> */}
-        <th>Date</th>
-        <th>Remarks</th>
-       
-      </tr>
-    </thead>
-    
-    
- 
-                {
-                    myRecommendations.map((myRecommendation, index) => <>
-                   
-                        <tbody>
+                <table className="table table-sm">
+                    <thead className="text-green-800 bg-blue-200">
                         <tr>
-                          <th className="text-xs">{index + 1}</th>
-                          <td className="text-xs">{myRecommendation.userEmailQuery}</td>
-                          <td className="text-xs">{myRecommendation.queryTitle}</td>
-                          <td className="text-xs">{myRecommendation.recommendationName}</td>
-                          <td className="text-xs">{myRecommendation. recommendationDate}</td>
-                          <td onClick={() => handleDelete(myRecommendation._id)} className="text-red-600"><MdDeleteForever /></td>
-                          
+                            <th>Sl. No.</th>
+                            <th className="hidden md:table-cell">Asked by</th>
+                            <th>Query</th>
+                            <th>My Suggested product</th>
+                            {/* <th>Image</th> */}
+                            <th className="hidden md:table-cell">Date</th>
+                            <th>Remarks</th>
+
                         </tr>
+                    </thead>
+                    {
+                        myRecommendations.map((myRecommendation, index) => <>
+
+                            <tbody>
+                                <tr>
+                                    <th className="text-xs">{index + 1}</th>
+                                    <td className="text-xs hidden md:table-cell">{myRecommendation.userEmailQuery}</td>
+                                    <td className="text-xs">{myRecommendation.queryTitle}</td>
+                                    <td className="text-xs">{myRecommendation.recommendationName}</td>
+                                    <td className="text-xs hidden md:table-cell">{myRecommendation.recommendationDate}</td>
+                                    <td onClick={() => handleDelete(myRecommendation._id)} className="text-red-600">
+                                        <div className="flex justify-center items-center">
+                                        <MdDeleteForever className="lg:text-xl md:text-base text-xs" />
+                                        </div>
                         
-                      </tbody>
-                      </>
-                      
-                      )
-                }
-                 </table>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+                        </>
+
+                        )
+                    }
+                </table>
             </div>
         </div>
     );

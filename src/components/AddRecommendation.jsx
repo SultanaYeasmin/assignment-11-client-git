@@ -4,7 +4,7 @@ import AuthContext from "../AuthContext/AuthContext";
 import RecommendationsId from "./RecommendationsId";
 import Swal from "sweetalert2";
 
-const AddRecommendation = ({ query }) => {
+const AddRecommendation = ({ query, handleAddOneRecommendation  }) => {
     // const [queryForId, setQuery] = useState([])
     const { id } = useParams();
     const { user } = useContext(AuthContext);
@@ -71,6 +71,7 @@ const AddRecommendation = ({ query }) => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    handleAddOneRecommendation (newRecommendation)
                     // navigate('/myQueries');
                 }
 
@@ -79,8 +80,8 @@ const AddRecommendation = ({ query }) => {
 
     return (
         <div>
-            <form onSubmit={handleAddRecommendation} className="card-body w-2/3 mx-auto">
-
+            <form onSubmit={handleAddRecommendation} className="card-body">
+            <h1 className="text-xl font-bold text-center text-blue-500">Add a Recommendation!</h1>
                 {/* Recommendation TItle */}
                 <div className="form-control">
                     <label className="label">

@@ -6,12 +6,12 @@ import { TypeAnimation } from 'react-type-animation';
 const Slide = ({ image, text, title }) => {
     return (
         <div
-            className='w-full bg-center bg-cover h-[400px] md:h-[520px]'
+            className='w-full bg-center bg-cover h-[40vh] lg:h-[80vh]'
             style={{
                 backgroundImage: `url(${image})`,
             }}
         >
-            <div className='flex items-center justify-center w-full h-full bg-gray-900/40'>
+            <div className='flex items-center justify-center w-full h-full bg-gray-900/60'>
                 <div className='text-center'>
                     {/* <TypeAnimation
                         sequence={[
@@ -26,14 +26,14 @@ const Slide = ({ image, text, title }) => {
                         repeat={Infinity}
                     /> */}
                       <Fade triggerOnce>
-                    <h1 className='text-base md:text-lg lg:text-3xl  font-extrabold text-white drop-shadow-lg px-10'>{text}</h1>
+                    <h1 className='text-base md:text-2xl lg:text-3xl  font-extrabold text-white drop-shadow-lg px-10'>{text}</h1>
                     </Fade>
                   
-                        <p className='text-xs text-white lg:text-sm mt-5 drop-shadow-md px-5 break-words'>{title}</p> 
+                        <p className='text-xs text-white md:text-sm mt-5 drop-shadow-md px-5 break-words'>{title}</p> 
                     <br />
                     <Link
                         to='/addQueries'
-                        className='btn drop-shadow-md btn-wide text-white hover:bg-cyan-600 bg-blue-500 transition-all duration-300'
+                        className='btn drop-shadow-md btn-wide text-white hover:bg-cyan-600 bg-[#1E90FF] border-none transition-all duration-300'
                     >
                         Add Query & Get Solutions!
                     </Link>

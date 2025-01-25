@@ -19,8 +19,8 @@ const RecommendationsId = () => {
     console.log(recommendations);
 
     return (
-        <div className="border my-10 container mx-auto">
-            <p className="text-green-800 my-5 pl-5 bg-green-50">Available suggestions:{recommendations.length}</p>
+        <div className="my-10 container mx-auto">
+            <p className="text-gray-600 my-5 p-5 bg-blue-50">Available suggestions: {recommendations.length}</p>
             {
                 recommendations?.map((recommendation) => <Recommendation
                     key={recommendation._id}

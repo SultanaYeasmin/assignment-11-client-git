@@ -1,4 +1,3 @@
-
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -7,33 +6,31 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Slide from './Slide';
 
 
 const Slider = () => {
-    return (
-        <div className="px-5 py-10">
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                loop={true}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                }}
-                pagination={{
-                    clickable: true,
-                }}
-                navigation={true}
-               
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-            >
-       
-           <SwiperSlide>
+  return (
+    <div className="">
+      <Swiper
+        spaceBetween={30}
+        centeredSlides={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="mySwiper"
+      >
+
+        <SwiperSlide>
           <Slide
             image="https://i.ibb.co.com/BLggp0w/brennan-burling-xn602-Ft9-HJQ-unsplash.jpg"
             text='Share Concerns, Get Better Solutions!'
@@ -47,25 +44,25 @@ const Slider = () => {
             title="Get fast, reliable answers to your product questions and make confident decisions."
           />
         </SwiperSlide>
-       
+
         <SwiperSlide>
           <Slide
-         image="https://i.ibb.co.com/mbj7TCX/pexels-leeloothefirst-5428835-1.jpg"
+            image="https://i.ibb.co.com/mbj7TCX/pexels-leeloothefirst-5428835-1.jpg"
             text='Discover Smarter Alternatives for Everyday Choices!'
             title="Browse personalized recommendations and find smarter, more affordable solutions."
           />
         </SwiperSlide>
         <SwiperSlide>
           <Slide
-         image="https://i.ibb.co.com/ftSLxjX/krakenimages-Y5bv-Rlc-Cx8k-unsplash.jpg"
+            image="https://i.ibb.co.com/ftSLxjX/krakenimages-Y5bv-Rlc-Cx8k-unsplash.jpg"
             text='Empowering Informed Consumer Decisions!'
             title="Access a wide range of trusted insights to help you choose what’s right for you."
           />
         </SwiperSlide>
       </Swiper>
 
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Slider;
