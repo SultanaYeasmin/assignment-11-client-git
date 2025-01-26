@@ -96,3 +96,10 @@ The purpose of QueryNest is to provide a platform for users to:
 | `vercel`           | Hosting platform for backend.   |
 
 ---
+Live Site Link :
+https://assignment-11-sy11.web.app
+https://assignment-11-server-side-xi.vercel.app/
+
+Github Repository ( server ) : https://github.com/SultanaYeasmin/assignment-11-client-git
+
+Github Repository ( client ) : https://github.com/SultanaYeasmin/b10a11-server-side-SultanaYeasmin.git
