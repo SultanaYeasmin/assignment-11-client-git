@@ -11,7 +11,7 @@ const Queries = () => {
     // const {user} = useContext(AuthContext);
     const [search, setSearch] = useState('')
     useEffect(() => {
-        fetch(`http://localhost:5000/queries?search=${search}`)
+        fetch(`https://assignment-11-server-side-xi.vercel.app/queries?search=${search}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -20,7 +20,7 @@ const Queries = () => {
     }, [search])
     console.log(search, gridLayout)
     return (
-        <div className=''>
+        <div className='mb-10'>
             <div style={{ backgroundImage: `url(${img123})` }} className="bg-cover bg-center h-[60vh]">
                 <div className='flex items-center justify-center w-full h-full bg-gray-900/40'>
                     <div className='text-center'>
@@ -75,14 +75,14 @@ const Queries = () => {
             </div>
             <div>
               
-                {
+                {/* {
                     (queries.length == 0) && <>
 
                         <h1>No Queries found!</h1>
                         <Link to="/addQueries" className='btn btn-outline'>add queries</Link>
 
                     </>
-                }
+                } */}
                 <div className={`grid 
                 ${gridLayout === 1 ? 'lg:grid-cols-1' : ''}
                ${gridLayout === 2 ? 'lg:grid-cols-2' : ''}

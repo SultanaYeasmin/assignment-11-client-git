@@ -11,7 +11,7 @@ const RecentQueries = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/queries-six")
+        fetch("https://assignment-11-server-side-xi.vercel.app/queries-six")
             .then(res => res.json())
             .then(data => {
                 console.log(data);

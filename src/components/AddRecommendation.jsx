@@ -14,7 +14,7 @@ const AddRecommendation = ({ query, handleAddOneRecommendation  }) => {
          recommendationCount } = query || {};
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/query/${id}`)
+    //     fetch(`https://assignment-11-server-side-xi.vercel.app/query/${id}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data);
@@ -55,7 +55,7 @@ const AddRecommendation = ({ query, handleAddOneRecommendation  }) => {
         }
 
         console.log(newRecommendation);
-        fetch('http://localhost:5000/add-recommendation', {
+        fetch('https://assignment-11-server-side-xi.vercel.app/add-recommendation', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newRecommendation),

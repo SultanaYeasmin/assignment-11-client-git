@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       {
         path: "/query/:id",
         element: <PrivateRoute><QueryDetailsCard /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/query/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-side-xi.vercel.app/query/${params.id}`)
       },
       {
         path: "/query/update/:id",
         element:<PrivateRoute> <QueryUpdate /></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/query/${params.id}`)
+        loader: ({ params }) => fetch(`https://assignment-11-server-side-xi.vercel.app/query/${params.id}`)
       },
 
       // {

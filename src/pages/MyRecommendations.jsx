@@ -10,7 +10,7 @@ const MyRecommendations = () => {
     const axiosSecure = useAxiosSecure();
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/recommendations?email=${user?.email}`)
+    //     fetch(`https://assignment-11-server-side-xi.vercel.app/recommendations?email=${user?.email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)
@@ -39,7 +39,7 @@ const MyRecommendations = () => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myRecommendations/${_id}`, {
+                fetch(`https://assignment-11-server-side-xi.vercel.app/myRecommendations/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

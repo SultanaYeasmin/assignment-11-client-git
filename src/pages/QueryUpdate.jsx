@@ -36,7 +36,7 @@ const  QueryUpdate = () => {
         }
         console.log(updatedQuery);
 
-        axiosSecure.put(`http://localhost:5000/update-query/${_id}`, updatedQuery)
+        axiosSecure.put(`https://assignment-11-server-side-xi.vercel.app/update-query/${_id}`, updatedQuery)
             .then(res =>  {
                 console.log(res.data)
                 if (res.data.modifiedCount) {

@@ -8,7 +8,7 @@ const RecommendationsId = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/recommendations/${id}`)
+        fetch(`https://assignment-11-server-side-xi.vercel.app/recommendations/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

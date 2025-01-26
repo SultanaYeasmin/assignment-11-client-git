@@ -15,7 +15,7 @@ const MyQueries = () => {
     const axiosSecure = useAxiosSecure();
 
     // useEffect(() => {
-    //     axios.get(`http://localhost:5000/queries/${user?.email}`,
+    //     axios.get(`https://assignment-11-server-side-xi.vercel.app/queries/${user?.email}`,
     //      {withCredentials:true})
     //         .then(res =>  {
     //             console.log(res.data);

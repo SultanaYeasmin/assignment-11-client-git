@@ -23,7 +23,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
         }).then((result) => {
 
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/query/${_id}`, {
+                fetch(`https://assignment-11-server-side-xi.vercel.app/query/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -45,7 +45,7 @@ const MyQueryCard = ({ query, queries, setQueries }) => {
         });
     }
     return (
-        <div className='px-5 '>
+        <div className='px-5'>
             {
                 queries && <>
                     <div className="card w-80
