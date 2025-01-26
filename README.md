@@ -73,3 +73,26 @@ The purpose of QueryNest is to provide a platform for users to:
 - **Routes**: APIs for managing queries and recommendations.
 - **Middleware**: Authentication and error handling.
 
+---
+
+## 📦 Total npm Packages Used
+
+| **Package Name**  | **Purpose**                      |
+|--------------------|----------------------------------|
+| `react`            | Core library for building UI.   |
+| `react-router-dom` | Routing for navigation.         |
+| `axios`            | HTTP client for API requests.   |
+| `firebase`         | Authentication and hosting.     |
+| `tailwindcss`      | Utility-first styling framework.|
+| `daisyui`          | Prebuilt Tailwind components.   |
+| `react-icons`      | Icons for design enhancement.   |
+| `react-toastify`   | Notifications and alerts.       |
+| `react-awesome-reveal` | Animations for visual effects.|
+| `jsonwebtoken`     | Token-based authentication.     |
+| `express`          | Backend framework for APIs.     |
+| `cors`             | Middleware for handling CORS.   |
+| `dotenv`           | Environment variable management.|
+| `mongodb`          | Database for queries and recommendations.|
+| `vercel`           | Hosting platform for backend.   |
+
+---
