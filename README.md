@@ -7,7 +7,7 @@
 ## 🌐 Live URLs
 
 - **Frontend Live Link**: [QueryNest Frontend](https://assignment-11-sy11.web.app)
-- **Backend Live Link**: [QueryNest Backend](https://assignment-11-server-side-ahnzd470r-sultana-yeasmins-projects.vercel.app)  (https://assignment-11-server-side-xi.vercel.app/)
+- **Backend Live Link**: [QueryNest Backend](https://assignment-11-server-side-xi.vercel.app/)
 
 ---
 
@@ -73,20 +73,3 @@ The purpose of QueryNest is to provide a platform for users to:
 - **Routes**: APIs for managing queries and recommendations.
 - **Middleware**: Authentication and error handling.
 
----
-
-## 🔑 Environment Variables
-
-### Frontend (Firebase):
-- `VITE_FIREBASE_API_KEY`
-- `VITE_FIREBASE_AUTH_DOMAIN`
-- `VITE_FIREBASE_PROJECT_ID`
-- `VITE_FIREBASE_STORAGE_BUCKET`
-- `VITE_FIREBASE_MESSAGING_SENDER_ID`
-- `VITE_FIREBASE_APP_ID`
-
-### Backend (Vercel):
-- `MONGODB_URI`: MongoDB connection string.
-- `JWT_SECRET`: Secret key for signing JWT tokens.
-
----
